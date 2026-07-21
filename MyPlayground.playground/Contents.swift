@@ -13,5 +13,7 @@ var person1 = Person(firstName: "Jack", lastName: "Sparrow")
 person1.sayHello()
 */
 
-var x: Int = 10
-print(x)
+//var x: Int = 10
+//print(x)
+
+
