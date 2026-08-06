@@ -15,6 +15,7 @@ var dict: [String: String] = ["Maharashtra": "Mumbai", "Rajasthan": "Jaipur", "K
 for i in dict {
     if i.value == "Jaipur" {
         print("I found my home!")
+        break
     }
 }
 /*:
