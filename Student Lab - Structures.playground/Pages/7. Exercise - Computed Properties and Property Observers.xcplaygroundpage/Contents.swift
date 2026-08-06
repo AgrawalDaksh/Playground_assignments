@@ -19,23 +19,35 @@ print(someRect.area)
  Create an instance of `Height` and then change one of its properties. Print out the other property to ensure that it was adjusted accordingly.
  */
 struct Height {
-    var heightInInches: Double
-    
-    var heightInCentimeters: Double
-    
+    var heightInInches: Double {
+        didSet {
+            let expectedcm = heightInInches * 2.54
+            if heightInCentimeters != expectedcm {
+                heightInCentimeters = expectedcm
+            }
+        }
+    }
+    var heightInCentimeters: Double {
+        didSet {
+            let expectedInch = heightInCentimeters / 2.54
+            if heightInInches != expectedInch {
+                heightInInches = expectedInch
+            }
+        }
+    }
     init(heightInInches: Double) {
         self.heightInInches = heightInInches
-        self.heightInCentimeters = heightInInches*2.54
+        self.heightInCentimeters = heightInInches * 2.54
     }
-    
     init(heightInCentimeters: Double) {
         self.heightInCentimeters = heightInCentimeters
-        self.heightInInches = heightInCentimeters/2.54
+        self.heightInInches = heightInCentimeters / 2.54
     }
 }
-
-
-
+var personHeight = Height(heightInInches: 70)
+print(personHeight.heightInCentimeters)
+personHeight.heightInCentimeters = 190
+print(personHeight.heightInInches)
 /*:
 [Previous](@previous)  |  page 7 of 10  |  [Next: App Exercise - Mile Times and Congratulations](@next)
  */

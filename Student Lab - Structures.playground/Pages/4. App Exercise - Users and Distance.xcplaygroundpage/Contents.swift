@@ -24,7 +24,7 @@ print("Name: \(user.name)\nAge: \(user.age)\nHeight: \(user.height)\nWeight: \(u
 struct Distance {
     var meter: Double
     var feet: Double {
-        meter / 3.28084
+        meter * 3.28084
     }
     init(meter: Double) {
         self.meter = meter
